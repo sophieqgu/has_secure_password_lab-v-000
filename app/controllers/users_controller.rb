@@ -3,12 +3,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    if invalid_params
-      redirect_to new_user_path
-    else
-      @user = User.create(user_params)
-      redirect_to root_path
-    end
+    @user = User.create(user_params)
+    redirect_to root_path
+
   end
 
   def invalid_params
