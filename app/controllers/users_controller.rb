@@ -12,10 +12,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def invalid_params
-    !params[:name] || params[:name] = '' || !params[:password] || params[:password] = ''
-  end
-
+  
   private
 
   def user_params
