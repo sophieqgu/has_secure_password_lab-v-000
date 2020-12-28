@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def create
     if invalid_params
-      redirect_to login_path
+      redirect_to new_user_path
     else
       @user = User.create(user_params)
       redirect_to root_path
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def invalid_params
-    !params[:name] || params[:name] = '' || !params[:password] || params[:password] = '' 
+    !params[:name] || params[:name] = '' || !params[:password] || params[:password] = ''
   end
 
   private
